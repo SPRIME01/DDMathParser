@@ -17,11 +17,11 @@
 #define DDRuleTemplateAnyVariable @"__var"
 #define DDRuleTemplateAnyExpression @"__exp"
 
-#ifdef __clang__
-#define DD_STRONG strong
-#else
+//#ifdef __clang__
+//#define DD_STRONG strong
+//#else
 #define DD_STRONG retain
-#endif
+//#endif
 
 #if __has_feature(objc_arc)
 

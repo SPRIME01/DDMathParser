@@ -30,7 +30,7 @@
     return [[self token] operatorFunction];
 }
 
-- (BOOL)resolveWithParser:(DDParser *)parser error:(NSError *__autoreleasing *)error {
+- (BOOL)resolveWithParser:(DDParser *)parser error:(NSError **)error {
 #pragma unused(parser)
     ERR_ASSERT(error);
     if ([self operatorArity] == DDOperatorArityUnary) {
