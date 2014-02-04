@@ -15,23 +15,19 @@
 @class DDParser;
 @class DDExpression;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, DDParserTermType) {
     DDParserTermTypeNumber = 1,
     DDParserTermTypeVariable,
     DDParserTermTypeOperator,
     DDParserTermTypeFunction,
     DDParserTermTypeGroup
-} DDParserTermType;
+};
 
-@interface _DDParserTerm : NSObject {
-    BOOL resolved;
-    DDParserTermType type;
-    DDMathStringToken *token;
-}
+@interface _DDParserTerm : NSObject
 
 @property (nonatomic,getter=isResolved) BOOL resolved;
 @property (nonatomic,readonly) DDParserTermType type;
-@property (nonatomic,readonly,DD_STRONG) DDMathStringToken *token;
+@property (nonatomic,readonly,strong) DDMathStringToken *token;
 
 + (id)rootTermWithTokenizer:(DDMathStringTokenizer *)tokenizer error:(NSError **)error;
 + (id)termWithTokenizer:(DDMathStringTokenizer *)tokenizer error:(NSError **)error;
